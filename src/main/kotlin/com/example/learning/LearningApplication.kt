@@ -1,7 +1,5 @@
 package com.example.learning
 
-import com.example.learning.repository.DepartmentRepository
-import com.example.learning.test.Test
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

@@ -11,17 +11,10 @@ class Department {
 
     var name: String? = null
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_id")
-    var parent: Department? = null
-
-    @BatchSize(size = 1000)
-    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
-    var subs: Set<Department>? = null
+    @Column(name="parent_id")
+    var parentId: Long? = null
 
     @BatchSize(size = 1000)
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    var employees: Set<Employee>? = null
-
+    var employees: List<Employee>? = null
 }

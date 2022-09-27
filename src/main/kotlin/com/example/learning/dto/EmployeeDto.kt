@@ -1,5 +1,7 @@
 package com.example.learning.dto
 
+import com.example.learning.model.Employee
+
 class EmployeeDto {
         var id: Long? = null
 
@@ -15,8 +17,8 @@ class EmployeeDto {
 
         var departmentId: Long? = null
 
-    constructor(id: Long, name: String){
-        this.id = id
-        this.name = name
+    constructor(employee: Employee){
+        this.id = employee.id
+        this.name = employee.name
     }
 }

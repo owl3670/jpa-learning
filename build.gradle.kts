@@ -4,7 +4,6 @@ plugins {
     id("org.springframework.boot") version "2.7.4"
     id("io.spring.dependency-management") version "1.0.14.RELEASE"
     id("com.google.cloud.tools.jib") version "3.2.1"
-    id("com.ewerk.gradle.plugins.querydsl") version "1.0.10"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
     kotlin("plugin.serialization") version "1.6.21"
@@ -31,8 +30,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
     implementation("org.postgresql:postgresql")
-    implementation("com.querydsl:querydsl-jpa")
-    implementation("com.querydsl:querydsl-apt")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
