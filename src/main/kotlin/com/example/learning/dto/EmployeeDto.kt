@@ -1,6 +1,6 @@
 package com.example.learning.dto
 
-import com.example.learning.model.Employee
+import com.example.learning.entity.Employee
 
 class EmployeeDto {
         var id: Long? = null
