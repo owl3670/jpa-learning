@@ -1,10 +1,19 @@
 package com.example.learning.member
 
+import com.example.learning.AppConfig
+import com.example.learning.order.OrderService
 import org.assertj.core.api.Assertions
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class MemberServiceTest {
-    val memberService: MemberService = MemberServiceImpl()
+    lateinit var memberService: MemberService
+
+    @BeforeEach
+    fun beforeEach(){
+        val appConfig = AppConfig()
+        memberService = appConfig.memberService()
+    }
 
     @Test
     fun join() {

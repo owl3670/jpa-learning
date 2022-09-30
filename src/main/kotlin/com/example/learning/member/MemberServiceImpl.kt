@@ -1,7 +1,8 @@
 package com.example.learning.member
 
-class MemberServiceImpl : MemberService {
-    private val memberRepository: MemberRepository = MemoryMemberRepository()
+class MemberServiceImpl(
+    private val memberRepository: MemberRepository
+) : MemberService {
     override fun join(member: Member) {
         memberRepository.save(member)
     }

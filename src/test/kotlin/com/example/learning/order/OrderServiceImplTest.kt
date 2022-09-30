@@ -1,18 +1,23 @@
 package com.example.learning.order
 
-import com.example.learning.discount.DiscountPolicy
-import com.example.learning.discount.FixDiscountPolicy
+import com.example.learning.AppConfig
 import com.example.learning.member.Grade
 import com.example.learning.member.Member
 import com.example.learning.member.MemberService
-import com.example.learning.member.MemberServiceImpl
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 internal class OrderServiceImplTest {
-    val memberService: MemberService = MemberServiceImpl()
-    val orderService: OrderService = OrderServiceImpl()
+    lateinit var memberService: MemberService
+    lateinit var orderService: OrderService
+
+    @BeforeEach
+    fun beforeEach(){
+        val appConfig = AppConfig()
+        memberService = appConfig.memberService()
+        orderService = appConfig.orderService()
+    }
 
     @Test
     fun createOrder(){
