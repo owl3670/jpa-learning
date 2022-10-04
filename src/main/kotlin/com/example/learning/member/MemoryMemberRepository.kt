@@ -1,7 +1,8 @@
 package com.example.learning.member
 
-val store = HashMap<Long, Member>()
+import org.springframework.stereotype.Component
 
+@Component
 class MemoryMemberRepository: MemberRepository {
     override fun save(member: Member) {
         store[member.getId()] = member
@@ -9,5 +10,9 @@ class MemoryMemberRepository: MemberRepository {
 
     override fun findById(id: Long): Member? {
         return store[id]
+    }
+
+    companion object {
+        val store = HashMap<Long, Member>()
     }
 }
