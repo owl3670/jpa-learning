@@ -25,4 +25,15 @@ class ConfigurationSingletonTest {
         assertThat(memberService.getMemberRepository()).isSameAs(memberRepository)
         assertThat(orderService.getMemberRepository()).isSameAs(memberRepository)
     }
+
+    @Test
+    fun configurationDeep(){
+        val ac = AnnotationConfigApplicationContext(AppConfig::class.java)
+
+        // AppConfig도 스프링 빈으로 등록된다.
+        val bean = ac.getBean("appConfig", AppConfig::class.java)
+
+        println("bean = ${bean.javaClass}")
+        // 출력 class com.example.learning.AppConfig$$EnhancerBySpringCGLIB$$e169307c
+    }
 }
