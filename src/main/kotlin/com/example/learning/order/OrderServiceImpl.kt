@@ -6,10 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class OrderServiceImpl (
-    private val memberRepository: MemberRepository,
-    private val discountPolicy: DiscountPolicy
-) : OrderService {
+class OrderServiceImpl : OrderService {
+
+    private lateinit var memberRepository: MemberRepository
+    private lateinit var discountPolicy: DiscountPolicy
+
+    @Autowired
+    fun setMemberRepository(memberRepository: MemberRepository) {
+        this.memberRepository = memberRepository
+    }
+
+    @Autowired
+    fun setDiscountPolicy(discountPolicy: DiscountPolicy) {
+        this.discountPolicy = discountPolicy
+    }
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
         val member = memberRepository.findById(memberId)
