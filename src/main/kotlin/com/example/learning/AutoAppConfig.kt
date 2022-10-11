@@ -10,8 +10,4 @@ import org.springframework.context.annotation.FilterType
 @Configuration
 @ComponentScan(excludeFilters = [ComponentScan.Filter(type = FilterType.ANNOTATION, classes = [Configuration::class])])
 class AutoAppConfig {
-    @Bean(name = ["memoryMemberRepository"])
-    fun memoryMemberRepository(): MemberRepository {
-        return MemoryMemberRepository()
-    }
 }
