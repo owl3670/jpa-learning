@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class OrderServiceImpl @Autowired constructor(
+class OrderServiceImpl (
     private val memberRepository: MemberRepository,
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
