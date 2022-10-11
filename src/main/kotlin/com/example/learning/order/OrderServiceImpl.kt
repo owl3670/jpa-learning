@@ -7,19 +7,10 @@ import org.springframework.stereotype.Component
 
 @Component
 class OrderServiceImpl : OrderService {
-
+    @Autowired
     private lateinit var memberRepository: MemberRepository
+    @Autowired
     private lateinit var discountPolicy: DiscountPolicy
-
-    @Autowired
-    fun setMemberRepository(memberRepository: MemberRepository) {
-        this.memberRepository = memberRepository
-    }
-
-    @Autowired
-    fun setDiscountPolicy(discountPolicy: DiscountPolicy) {
-        this.discountPolicy = discountPolicy
-    }
 
     override fun createOrder(memberId: Long, itemName: String, itemPrice: Int): Order {
         val member = memberRepository.findById(memberId)

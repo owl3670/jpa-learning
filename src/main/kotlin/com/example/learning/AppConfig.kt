@@ -24,7 +24,7 @@ class AppConfig {
     fun orderService(): OrderService {
         // 1번
         println("call AppConfig.orderService")
-        return OrderServiceImpl(memberRepository(), discountPolicy())
+        return OrderServiceImpl()
     }
 
     @Bean
