@@ -10,7 +10,7 @@
 
     <bean id="orderService" class="com.example.learning.order.OrderServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
-        <constructor-arg name="rateDiscountPolicy" ref="discountPolicy"/>
+        <constructor-arg name="discountPolicy" ref="discountPolicy"/>
     </bean>
 
     <bean id="discountPolicy" class="com.example.learning.discount.RateDiscountPolicy"/>
