@@ -1,15 +1,12 @@
 package com.example.learning.order
 
 import com.example.learning.discount.DiscountPolicy
-import com.example.learning.discount.RateDiscountPolicy
 import com.example.learning.member.MemberRepository
-import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 
 @Component
 class OrderServiceImpl(
     private val memberRepository: MemberRepository,
-    @Qualifier("mainDiscountPolicy")
     private val discountPolicy: DiscountPolicy
 ) : OrderService {
 
