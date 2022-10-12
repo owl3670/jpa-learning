@@ -1,12 +1,12 @@
 package com.example.learning.discount
 
+import com.example.learning.annotation.MainDiscountPolicy
 import com.example.learning.member.Grade
 import com.example.learning.member.Member
-import org.springframework.context.annotation.Primary
 import org.springframework.stereotype.Component
 
 @Component
-@Primary
+@MainDiscountPolicy
 class RateDiscountPolicy : DiscountPolicy {
     val discountPercent = 10
 
