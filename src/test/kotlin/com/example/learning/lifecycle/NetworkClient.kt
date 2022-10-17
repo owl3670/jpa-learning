@@ -1,6 +1,9 @@
 package com.example.learning.lifecycle
 
-class NetworkClient {
+import org.springframework.beans.factory.DisposableBean
+import org.springframework.beans.factory.InitializingBean
+
+class NetworkClient : InitializingBean, DisposableBean {
     private var url: String? = null
 
     init {
@@ -23,5 +26,14 @@ class NetworkClient {
 
     fun disconnect() {
         println("close: $url")
+    }
+
+    override fun afterPropertiesSet() {
+        connect()
+        call("초기화 연결 메시지")
+    }
+
+    override fun destroy() {
+        disconnect()
     }
 }
