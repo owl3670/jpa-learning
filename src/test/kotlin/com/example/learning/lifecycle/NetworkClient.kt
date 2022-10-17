@@ -1,15 +1,10 @@
 package com.example.learning.lifecycle
 
-import org.springframework.beans.factory.DisposableBean
-import org.springframework.beans.factory.InitializingBean
-
-class NetworkClient : InitializingBean, DisposableBean {
+class NetworkClient {
     private var url: String? = null
 
     init {
         println("생성자 호출, url = $url")
-        this.connect()
-        this.call("초기화 연결 메시지")
     }
 
     fun setUrl(url: String) {
@@ -28,12 +23,14 @@ class NetworkClient : InitializingBean, DisposableBean {
         println("close: $url")
     }
 
-    override fun afterPropertiesSet() {
+    fun init() {
+        println("NetworkClient.init")
         connect()
         call("초기화 연결 메시지")
     }
 
-    override fun destroy() {
+    fun close() {
+        println("NetworkClient.close")
         disconnect()
     }
 }
