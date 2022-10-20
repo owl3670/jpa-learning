@@ -2,6 +2,7 @@ package com.example.learning.scope
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.ObjectProvider
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
@@ -23,9 +24,9 @@ class PrototypeProviderTest {
     }
 }
 
-class ClientBeanTest2(@Autowired private val ac: ApplicationContext) {
+class ClientBeanTest2(@Autowired private val prototypeBeadProvider: ObjectProvider<PrototypeBeanTest2>) {
     fun logic(): Int {
-        val prototypeBean = this.ac.getBean(PrototypeBeanTest2::class.java)
+        val prototypeBean = this.prototypeBeadProvider.getObject()
         prototypeBean.addCount()
         return prototypeBean.getCount()
     }
