@@ -1,15 +1,16 @@
 package com.example.learning.common
 
 import org.springframework.context.annotation.Scope
+import org.springframework.context.annotation.ScopedProxyMode
 import org.springframework.stereotype.Component
-import java.util.UUID
+import java.util.*
 import javax.annotation.PostConstruct
 import javax.annotation.PreDestroy
 
 @Component
-@Scope("request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 class MyLogger {
-   private var uuid: String? = null
+    private var uuid: String? = null
     private var requestURL: String? = null
 
     fun setRequestUrl(url: String?) {
