@@ -1,5 +1,6 @@
-package com.spring.advanced.v0
+package com.spring.advanced.app.v0
 
+import com.spring.advanced.app.v0.OrderRepositoryV0
 import org.springframework.stereotype.Service
 
 @Service
