@@ -12,7 +12,7 @@ class OrderRepositoryV0 {
         sleep(1000)
     }
 
-    fun sleep(millis: Long) {
+    private fun sleep(millis: Long) {
         try {
             Thread.sleep(millis)
         } catch (e: InterruptedException) {
