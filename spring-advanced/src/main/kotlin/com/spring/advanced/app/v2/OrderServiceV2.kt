@@ -2,7 +2,6 @@ package com.spring.advanced.app.v2
 
 import com.spring.advanced.trace.TraceId
 import com.spring.advanced.trace.TraceStatus
-import com.spring.advanced.trace.hellotrace.HelloTraceV1
 import com.spring.advanced.trace.hellotrace.HelloTraceV2
 import org.springframework.stereotype.Service
 

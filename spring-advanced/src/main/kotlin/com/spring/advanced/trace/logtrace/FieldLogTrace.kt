@@ -2,10 +2,9 @@ package com.spring.advanced.trace.logtrace
 
 import com.spring.advanced.trace.TraceId
 import com.spring.advanced.trace.TraceStatus
-import com.spring.advanced.trace.hellotrace.HelloTraceV2
 import mu.KotlinLogging
 
-class FiledLogTrace : LogTrace {
+class FieldLogTrace : LogTrace {
     private val logger = KotlinLogging.logger {}
     private var traceIdHolder: TraceId? = null
 
@@ -13,7 +12,7 @@ class FiledLogTrace : LogTrace {
         this.syncTraceId()
         val traceId = traceIdHolder!!
         val startTimeMs = System.currentTimeMillis()
-        logger.info("[${traceId.id}] ${addSpace(FiledLogTrace.START_PREFIX, traceId.level)}$message")
+        logger.info("[${traceId.id}] ${addSpace(FieldLogTrace.START_PREFIX, traceId.level)}$message")
         return TraceStatus(traceId, startTimeMs, message)
     }
 
@@ -42,9 +41,9 @@ class FiledLogTrace : LogTrace {
         val elapsedTimeMs = endTimeMs - status.startTimeMs
         val traceId = status.traceId
         if(e == null){
-            logger.info("[${traceId.id}] ${addSpace(FiledLogTrace.COMPLETE_PREFIX, traceId.level)}${status.message} time=${elapsedTimeMs}ms")
+            logger.info("[${traceId.id}] ${addSpace(FieldLogTrace.COMPLETE_PREFIX, traceId.level)}${status.message} time=${elapsedTimeMs}ms")
         }else{
-            logger.info("[${traceId.id}] ${addSpace(FiledLogTrace.EX_PREFIX, traceId.level)}${status.message} time=${elapsedTimeMs}ms ex=${e}")
+            logger.info("[${traceId.id}] ${addSpace(FieldLogTrace.EX_PREFIX, traceId.level)}${status.message} time=${elapsedTimeMs}ms ex=${e}")
         }
 
         this.releaseTraceId()

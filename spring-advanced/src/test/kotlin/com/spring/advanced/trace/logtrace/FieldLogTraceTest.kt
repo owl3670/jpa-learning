@@ -2,8 +2,8 @@ package com.spring.advanced.trace.logtrace
 
 import org.junit.jupiter.api.Test
 
-class FiledLogTraceTest {
-    val trace = FiledLogTrace()
+class FieldLogTraceTest {
+    val trace = FieldLogTrace()
 
     @Test
     fun begin_end_level2(){
