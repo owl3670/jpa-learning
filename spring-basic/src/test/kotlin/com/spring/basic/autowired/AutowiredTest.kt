@@ -1,9 +1,11 @@
 package com.spring.basic.autowired
 
 import com.spring.basic.member.Member
+import com.spring.basic.member.MemberRepository
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
+import org.springframework.stereotype.Component
 import java.util.*
 
 class AutowiredTest {
