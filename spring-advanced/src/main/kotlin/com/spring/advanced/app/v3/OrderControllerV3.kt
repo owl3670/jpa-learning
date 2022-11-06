@@ -22,6 +22,5 @@ class OrderControllerV3(
             trace.exception(status!!, e)
             throw e
         }
-
     }
 }
