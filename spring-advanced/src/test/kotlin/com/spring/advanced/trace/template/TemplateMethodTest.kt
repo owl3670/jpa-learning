@@ -1,5 +1,7 @@
 package com.spring.advanced.trace.template
 
+import com.spring.advanced.trace.template.code.SubClassLogic1
+import com.spring.advanced.trace.template.code.SubClassLogic2
 import mu.KotlinLogging
 import org.junit.jupiter.api.Test
 
@@ -26,5 +28,13 @@ class TemplateMethodTest {
         val endTime = System.currentTimeMillis()
         val elapsedTime = endTime - startTime
         logger.info("elapsedTime=$elapsedTime")
+    }
+
+    @Test
+    fun templateMethodV1() {
+        val logic1 = SubClassLogic1()
+        logic1.execute()
+        val logic2 = SubClassLogic2()
+        logic2.execute()
     }
 }
