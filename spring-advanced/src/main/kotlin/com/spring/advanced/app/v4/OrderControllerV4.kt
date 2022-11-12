@@ -1,6 +1,5 @@
 package com.spring.advanced.app.v4
 
-import com.spring.advanced.trace.TraceStatus
 import com.spring.advanced.trace.logtrace.LogTrace
 import com.spring.advanced.trace.template.AbstractTemplate
 import org.springframework.web.bind.annotation.GetMapping
