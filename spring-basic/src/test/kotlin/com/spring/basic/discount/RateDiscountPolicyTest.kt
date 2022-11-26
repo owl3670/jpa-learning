@@ -1,7 +1,5 @@
 package com.spring.basic.discount
 
-import com.spring.basic.discount.DiscountPolicy
-import com.spring.basic.discount.RateDiscountPolicy
 import com.spring.basic.member.Grade
 import com.spring.basic.member.Member
 import org.junit.jupiter.api.Assertions.*

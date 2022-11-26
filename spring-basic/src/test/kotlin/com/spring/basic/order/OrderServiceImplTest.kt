@@ -4,7 +4,6 @@ import com.spring.basic.AppConfig
 import com.spring.basic.member.Grade
 import com.spring.basic.member.Member
 import com.spring.basic.member.MemberService
-import com.spring.basic.order.OrderService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

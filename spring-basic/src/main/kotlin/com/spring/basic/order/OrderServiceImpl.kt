@@ -3,7 +3,6 @@ package com.spring.basic.order
 import com.spring.basic.annotation.MainDiscountPolicy
 import com.spring.basic.discount.DiscountPolicy
 import com.spring.basic.member.MemberRepository
-import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 
 @Component
