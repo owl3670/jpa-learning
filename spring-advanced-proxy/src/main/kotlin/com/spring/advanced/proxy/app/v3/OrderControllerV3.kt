@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class OrderController(
+class OrderControllerV3(
     private val orderService: OrderServiceV3
 ) {
     @GetMapping("/v3/request")
