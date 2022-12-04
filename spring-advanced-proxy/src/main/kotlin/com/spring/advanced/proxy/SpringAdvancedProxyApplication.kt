@@ -1,7 +1,6 @@
 package com.spring.advanced.proxy
 
-import com.spring.advanced.proxy.config.v1_proxy.ConcreteProxyConfig
-import com.spring.advanced.proxy.config.v1_proxy.InterfaceProxyConfig
+import com.spring.advanced.proxy.config.v2_dynamicproxy.DynamicProxyBasicConfig
 import com.spring.advanced.proxy.trace.logtrace.LogTrace
 import com.spring.advanced.proxy.trace.logtrace.ThreadLocalLogTrace
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -11,7 +10,8 @@ import org.springframework.context.annotation.Import
 
 //@Import(AppV1Config::class, AppV2Config::class)
 //@Import(InterfaceProxyConfig::class)
-@Import(ConcreteProxyConfig::class)
+//@Import(ConcreteProxyConfig::class)
+@Import(DynamicProxyBasicConfig::class)
 @SpringBootApplication(scanBasePackages = ["com.spring.advanced.proxy.app"])
 class SpringAdvancedProxyApplication{
     @Bean
