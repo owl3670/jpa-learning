@@ -1,9 +1,9 @@
-package com.spring.advanced.decorator
+package com.spring.advanced.proxy.decorator
 
-import com.spring.advanced.decorator.code.DecoratorPatternClient
-import com.spring.advanced.decorator.code.MessageDecorator
-import com.spring.advanced.decorator.code.RealComponent
-import com.spring.advanced.decorator.code.TimeDecorator
+import com.spring.advanced.proxy.decorator.code.DecoratorPatternClient
+import com.spring.advanced.proxy.decorator.code.MessageDecorator
+import com.spring.advanced.proxy.decorator.code.RealComponent
+import com.spring.advanced.proxy.decorator.code.TimeDecorator
 import org.junit.jupiter.api.Test
 
 class DecoratorPatternTest {

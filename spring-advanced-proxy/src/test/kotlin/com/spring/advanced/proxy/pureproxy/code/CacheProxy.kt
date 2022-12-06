@@ -1,4 +1,4 @@
-package com.spring.advanced.proxy.code
+package com.spring.advanced.proxy.pureproxy.code
 
 import mu.KotlinLogging
 

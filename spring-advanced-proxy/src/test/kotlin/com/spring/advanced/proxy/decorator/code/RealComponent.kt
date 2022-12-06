@@ -1,4 +1,4 @@
-package com.spring.advanced.decorator.code
+package com.spring.advanced.proxy.decorator.code
 
 import mu.KotlinLogging
 

@@ -1,8 +1,8 @@
-package com.spring.advanced.concreteproxy
+package com.spring.advanced.proxy.concreteproxy
 
-import com.spring.advanced.concreteproxy.code.ConcreteClient
-import com.spring.advanced.concreteproxy.code.ConcreteLogic
-import com.spring.advanced.concreteproxy.code.TimeProxy
+import com.spring.advanced.proxy.concreteproxy.code.ConcreteClient
+import com.spring.advanced.proxy.concreteproxy.code.ConcreteLogic
+import com.spring.advanced.proxy.concreteproxy.code.TimeProxy
 import org.junit.jupiter.api.Test
 
 class ConcreteProxyTest {

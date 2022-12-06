@@ -1,4 +1,4 @@
-package com.spring.advanced.jdkdynamic.code
+package com.spring.advanced.proxy.jdkdynamic.code
 
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method

@@ -1,4 +1,4 @@
-package com.spring.advanced.concreteproxy.code
+package com.spring.advanced.proxy.concreteproxy.code
 
 class ConcreteClient(
     private val concreteLogic: ConcreteLogic

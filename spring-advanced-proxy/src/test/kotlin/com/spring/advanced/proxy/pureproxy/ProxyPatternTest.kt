@@ -1,8 +1,8 @@
-package com.spring.advanced.proxy
+package com.spring.advanced.proxy.pureproxy
 
-import com.spring.advanced.proxy.code.CacheProxy
-import com.spring.advanced.proxy.code.ProxyPatternClient
-import com.spring.advanced.proxy.code.RealSubject
+import com.spring.advanced.proxy.pureproxy.code.CacheProxy
+import com.spring.advanced.proxy.pureproxy.code.ProxyPatternClient
+import com.spring.advanced.proxy.pureproxy.code.RealSubject
 import org.junit.jupiter.api.Test
 
 class ProxyPatternTest {

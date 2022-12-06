@@ -1,4 +1,4 @@
-package com.spring.advanced.jdkdynamic
+package com.spring.advanced.proxy.jdkdynamic
 
 import mu.KotlinLogging
 import org.junit.jupiter.api.Test

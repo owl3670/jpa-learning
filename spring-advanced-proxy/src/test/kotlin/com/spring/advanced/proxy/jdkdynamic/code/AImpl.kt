@@ -1,4 +1,4 @@
-package com.spring.advanced.jdkdynamic.code
+package com.spring.advanced.proxy.jdkdynamic.code
 
 class AImpl : AInterface {
     private val logger = mu.KotlinLogging.logger {  }
