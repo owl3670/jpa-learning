@@ -1,6 +1,6 @@
 package com.spring.advanced.proxy.common.service
 
-class ServiceImpl : ServiceInterface {
+open class ServiceImpl : ServiceInterface {
     private val logger = mu.KotlinLogging.logger {}
 
     override fun save() {
