@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Import
 class BeanPostProcessorConfig {
     @Bean
     fun logTraceProxyPostProcessor(logTrace: LogTrace): PackageLogTraceProxyPostProcessor {
-        return PackageLogTraceProxyPostProcessor("com.spring.advanced.proxy.config", getAdvisor(logTrace))
+        return PackageLogTraceProxyPostProcessor("com.spring.advanced.proxy.app", getAdvisor(logTrace))
     }
 
     private fun getAdvisor(logTrace: LogTrace): Advisor {
