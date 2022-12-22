@@ -1,6 +1,6 @@
 package com.spring.advanced.proxy.app.v1
 
-class OrderControllerV1Impl(
+open class OrderControllerV1Impl(
     private val orderService: OrderServiceV1
 ) : OrderControllerV1 {
     override fun request(itemId: String): String {
