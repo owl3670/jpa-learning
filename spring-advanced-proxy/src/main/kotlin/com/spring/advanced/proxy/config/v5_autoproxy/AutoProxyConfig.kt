@@ -5,6 +5,7 @@ import com.spring.advanced.proxy.AppV2Config
 import com.spring.advanced.proxy.config.v3_proxyfactory.advice.LogTraceAdvice
 import com.spring.advanced.proxy.trace.logtrace.LogTrace
 import org.springframework.aop.Advisor
+import org.springframework.aop.aspectj.AspectJExpressionPointcut
 import org.springframework.aop.support.DefaultPointcutAdvisor
 import org.springframework.aop.support.NameMatchMethodPointcut
 import org.springframework.context.annotation.Bean
@@ -18,6 +19,22 @@ class AutoProxyConfig {
     fun advisor1(logTrace: LogTrace) : Advisor{
         val pointcut = NameMatchMethodPointcut()
         pointcut.setMappedNames("request*", "order*", "save*")
+        val advice = LogTraceAdvice(logTrace)
+        return DefaultPointcutAdvisor(pointcut, advice)
+    }
+
+    @Bean
+    fun advisor2(logTrace: LogTrace) : Advisor{
+        val pointcut = AspectJExpressionPointcut()
+        pointcut.expression = "execution(* com.spring.advanced.proxy.app..*.*(..))"
+        val advice = LogTraceAdvice(logTrace)
+        return DefaultPointcutAdvisor(pointcut, advice)
+    }
+
+    @Bean
+    fun advisor3(logTrace: LogTrace) : Advisor{
+        val pointcut = AspectJExpressionPointcut()
+        pointcut.expression = "execution(* com.spring.advanced.proxy.app..*.*(..)) && !execution(* com.spring.advanced.proxy.app..noLog(..))"
         val advice = LogTraceAdvice(logTrace)
         return DefaultPointcutAdvisor(pointcut, advice)
     }
