@@ -2,12 +2,15 @@ package com.example.spring.advanced.aop
 
 import com.example.spring.advanced.aop.order.OrderRepository
 import com.example.spring.advanced.aop.order.OrderService
+import com.example.spring.advanced.aop.order.aop.AspectV1
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.springframework.aop.support.AopUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.Import
 
+@Import(AspectV1::class)
 @SpringBootTest
 class AopTest {
     private val logger = mu.KotlinLogging.logger {}
@@ -26,7 +29,7 @@ class AopTest {
 
     @Test
     fun success(){
-        orderService?.orderItem("item")
+        orderService?.orderItem("itemA")
     }
 
     @Test
