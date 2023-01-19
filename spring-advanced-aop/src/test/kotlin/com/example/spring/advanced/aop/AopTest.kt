@@ -4,6 +4,7 @@ import com.example.spring.advanced.aop.order.OrderRepository
 import com.example.spring.advanced.aop.order.OrderService
 import com.example.spring.advanced.aop.order.aop.AspectV2
 import com.example.spring.advanced.aop.order.aop.AspectV3
+import com.example.spring.advanced.aop.order.aop.AspectV4Pointcut
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
 import org.springframework.aop.support.AopUtils
@@ -13,7 +14,8 @@ import org.springframework.context.annotation.Import
 
 //@Import(AspectV1::class)
 //@Import(AspectV2::class)
-@Import(AspectV3::class)
+//@Import(AspectV3::class)
+@Import(AspectV4Pointcut::class)
 @SpringBootTest
 class AopTest {
     private val logger = mu.KotlinLogging.logger {}
