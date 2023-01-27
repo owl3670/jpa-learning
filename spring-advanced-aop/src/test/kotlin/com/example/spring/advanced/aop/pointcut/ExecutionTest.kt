@@ -88,4 +88,60 @@ class ExecutionTest {
         pointcut.expression = "execution(* com.example.spring.advanced.aop..*.*(..))"
         assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
     }
+
+    @Test
+    fun typeExactMatch(){
+        pointcut.expression = "execution(* com.example.spring.advanced.aop.member.MemberServiceImpl.*(..))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun typeMatchSuperType(){
+        pointcut.expression = "execution(* com.example.spring.advanced.aop.member.MemberService.*(..))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun typeMatchInternal(){
+        pointcut.expression = "execution(* com.example.spring.advanced.aop.member.MemberServiceImpl.*(..))"
+        val internalMethod = MemberServiceImpl::class.java.getMethod("internal", String::class.java)
+        assertThat(pointcut.matches(internalMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun typeMatchNoSuperTypeMethodFalse(){
+        pointcut.expression = "execution(* com.example.spring.advanced.aop.member.MemberService.*(..))"
+        val internalMethod = MemberServiceImpl::class.java.getMethod("internal", String::class.java)
+        assertThat(pointcut.matches(internalMethod, MemberServiceImpl::class.java)).isFalse
+    }
+
+    @Test
+    fun argsMatch(){
+        pointcut.expression = "execution(* *(String))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun argsMatchNoArgs(){
+        pointcut.expression = "execution(* *())"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isFalse
+    }
+
+    @Test
+    fun argsMatchStar(){
+        pointcut.expression = "execution(* *(*))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun argsMatchAll(){
+        pointcut.expression = "execution(* *(..))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
+
+    @Test
+    fun argsMatchComplex(){
+        pointcut.expression = "execution(* *(String, ..))"
+        assertThat(pointcut.matches(helloMethod, MemberServiceImpl::class.java)).isTrue
+    }
 }
