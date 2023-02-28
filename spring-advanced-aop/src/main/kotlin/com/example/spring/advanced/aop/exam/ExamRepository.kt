@@ -1,5 +1,6 @@
 package com.example.spring.advanced.aop.exam
 
+import com.example.spring.advanced.aop.exam.annotation.Retry
 import com.example.spring.advanced.aop.exam.annotation.Trace
 import org.springframework.stereotype.Repository
 
@@ -10,6 +11,7 @@ class ExamRepository {
     }
 
     @Trace
+    @Retry(value=4)
     fun save(itemId: String): String {
         seq++
         if (seq % 5 == 0){
