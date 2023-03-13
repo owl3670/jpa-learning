@@ -9,7 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
 
 //@SpringBootTest(properties = ["spring.aop.proxy-target-class=false"])
-@SpringBootTest(properties = ["spring.aop.proxy-target-class=true"])
+//@SpringBootTest(properties = ["spring.aop.proxy-target-class=true"])
+@SpringBootTest
 @Import(ProxyDIAspect::class)
 class ProxyDITest {
     private val logger = mu.KotlinLogging.logger {}
